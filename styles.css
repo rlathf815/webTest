@@ -129,12 +129,7 @@ button.box {
     font-size: 14px;
     font-weight: bold;
 }
-.box:active {
-    background-color: #f2f2f2;
-    border-color: #ccc;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    pointer-events: none;
-}
+
 .box.touch-active {
     filter: brightness(0.8);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
