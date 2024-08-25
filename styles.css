@@ -7,6 +7,9 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f7fc;
+    max-width: 100%;
+    justify-content: center;
+    overflow-x: auto; /* Prevent horizontal overflow */
 }
 
 .header {
@@ -23,15 +26,20 @@ body {
     font-size: 18px;
     color: #ff7a7a;
 }
-
+.booth-container {
+    max-width: 100%;
+    justify-content: center;
+    overflow-x: auto; /* Allow horizontal scrolling */
+}
 .main-grid {
     display: grid;
     grid-template-columns: repeat(3, 400px); /* Fixed column width */
     gap: 20px;
     padding: 5px;
     justify-content: center; /* Centers the grid items */
-    max-width: 1200px;
+    max-width: 100%; /* Set max width to 100% */
     margin: 0 auto;
+    /*overflow-x: auto; /* Allow horizontal scrolling if needed */
 }
 
 .category-box, .special-exhibition, .unique-jobs {
@@ -169,11 +177,15 @@ footer {
 
 /* Mobile Optimization */
 @media (max-width: 768px) {
+    .booth-container {
+        overflow-x: auto; /* Allow horizontal scrolling */
+    }
     .main-grid {
         grid-template-columns: repeat(auto-fit, 300px); /* Still uses fixed width */
         gap: 10px;
         padding: 10px;
         justify-content: center;
+        
     }
 
     .container {
@@ -201,10 +213,14 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .booth-container {
+        overflow-x: auto; /* Allow horizontal scrolling */
+    }
     .main-grid {
         grid-template-columns: repeat(auto-fit, 300px); /* Still uses fixed width */
         gap: 5px;
         justify-content: center;
+        /*overflow-x: auto; /* Allow horizontal scrolling */
     }
 
     .box {
