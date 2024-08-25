@@ -7,7 +7,7 @@
             content="width=device-width, initial-scale=1.0, minimum-scale=0.05, maximum-scale=5.0, user-scalable=yes">
 
         <title>진로 박람회</title>
-        <link rel="stylesheet" href="styles copy.css">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <div class="header">
@@ -204,15 +204,7 @@
             <p>의왕시진로지원센터 꿈터</p>
         </footer>
         <script>
-            // Add touch event listeners to all buttons with the class "box"
-            document.querySelectorAll('.box').forEach(function(button) {
-                button.addEventListener('touchstart', function() {
-                    button.classList.add('touched');
-                });
-                button.addEventListener('touchend', function() {
-                    button.classList.remove('touched');
-                });
-            });
+            document.addEventListener("touchstart", function() {}, true);
         </script>
         
     </body>
