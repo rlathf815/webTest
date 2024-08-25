@@ -134,6 +134,14 @@ button.box {
     font-size: 14px;
     font-weight: bold;
 }
+.box:active {
+    filter: brightness(85%); /* Darkens the button */
+}
+/* Apply darker color when the button is touched */
+.touched {
+    filter: brightness(70%); /* Adjust brightness to make it even darker */
+    transition: filter 0.2s ease; /* Smooth transition */
+}
 
 .pink {
     background-color: pink;

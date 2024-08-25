@@ -203,6 +203,17 @@
         <footer>
             <p>의왕시진로지원센터 꿈터</p>
         </footer>
+        <script>
+            // Add touch event listeners to all buttons with the class "box"
+            document.querySelectorAll('.box').forEach(function(button) {
+                button.addEventListener('touchstart', function() {
+                    button.classList.add('touched');
+                });
+                button.addEventListener('touchend', function() {
+                    button.classList.remove('touched');
+                });
+            });
+        </script>
         
     </body>
 </html>
