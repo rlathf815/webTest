@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booth Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .booth-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .booth-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .booth-image {
+            width: 300px;
+            height: 200px;
+            margin: 20px 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .booth-details {
+            max-width: 600px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="booth-container">
+        <div id="booth-title" class="booth-title"></div>
+        <div id="booth-image" class="booth-image"></div>
+        <div id="booth-details" class="booth-details"></div>
+    </div>
+
+    <script>
+        // Sample booth data
+        const booths = {
+            56: {
+                name: "특수분장사",
+                image: "images/booth56.jpg", // Replace with actual image path
+                details: "특수분장사에 대한 상세 정보입니다. 이 직업은 영화나 공연에서 특수한 분장을 담당합니다."
+            },
+            55: {
+                name: "메이크업 아티스트",
+                image: "images/booth55.jpg",
+                details: "메이크업 아티스트는 다양한 상황에서 화장을 담당하는 전문가입니다."
+            },
+            54: {
+                name: "",
+                image: "",
+                details:""
+            },
+            53: {
+                name: "",
+                image: "",
+                details:""
+            },
+            52: {
+                name: "",
+                image: "",
+                details:""
+            },
+            51: {
+                name: "",
+                image: "",
+                details:""
+            },
+            51: {
+                name: "",
+                image: "",
+                details:""
+            },
+            50: {
+                name: "",
+                image: "",
+                details:""
+            },
+            49: {
+                name: "",
+                image: "",
+                details:""
+            },
+            48: {
+                name: "",
+                image: "",
+                details:""
+            },
+            47: {
+                name: "",
+                image: "",
+                details:""
+            },
+            46: {
+                name: "",
+                image: "",
+                details:""
+            },
+            45: {
+                name: "",
+                image: "",
+                details:""
+            },
+            44: {
+                name: "",
+                image: "",
+                details:""
+            },
+            43: {
+                name: "",
+                image: "",
+                details:""
+            },
+            42: {
+                name: "",
+                image: "",
+                details:""
+            },
+            41: {
+                name: "",
+                image: "",
+                details:""
+            },
+            40: {
+                name: "",
+                image: "",
+                details:""
+            },
+            39: {
+                name: "",
+                image: "",
+                details:""
+            },
+            38: {
+                name: "",
+                image: "",
+                details:""
+            },
+            37: {
+                name: "",
+                image: "",
+                details:""
+            },
+            36: {
+                name: "",
+                image: "",
+                details:""
+            },
+            35: {
+                name: "",
+                image: "",
+                details:""
+            },
+            34: {
+                name: "",
+                image: "",
+                details:""
+            },
+            33: {
+                name: "",
+                image: "",
+                details:""
+            },
+            32: {
+                name: "",
+                image: "",
+                details:""
+            },
+            31: {
+                name: "",
+                image: "",
+                details:""
+            },
+            30: {
+                name: "",
+                image: "",
+                details:""
+            },
+            29: {
+                name: "",
+                image: "",
+                details:""
+            },
+            28: {
+                name: "",
+                image: "",
+                details:""
+            },
+            27: {
+                name: "",
+                image: "",
+                details:""
+            },
+            26: {
+                name: "",
+                image: "",
+                details:""
+            },
+            25: {
+                name: "",
+                image: "",
+                details:""
+            },
+            24: {
+                name: "",
+                image: "",
+                details:""
+            },
+            23: {
+                name: "",
+                image: "",
+                details:""
+            },
+            22: {
+                name: "",
+                image: "",
+                details:""
+            },
+            21: {
+                name: "",
+                image: "",
+                details:""
+            },
+            20: {
+                name: "",
+                image: "",
+                details:""
+            },
+            19: {
+                name: "",
+                image: "",
+                details:""
+            },
+            18: {
+                name: "",
+                image: "",
+                details:""
+            },
+            17: {
+                name: "",
+                image: "",
+                details:""
+            },
+            16: {
+                name: "",
+                image: "",
+                details:""
+            },
+            15: {
+                name: "",
+                image: "",
+                details:""
+            },
+            14: {
+                name: "",
+                image: "",
+                details:""
+            },
+            13: {
+                name: "",
+                image: "",
+                details:""
+            },
+            12: {
+                name: "",
+                image: "",
+                details:""
+            },
+            11: {
+                name: "",
+                image: "",
+                details:""
+            },
+            10: {
+                name: "",
+                image: "",
+                details:""
+            },
+            9: {
+                name: "",
+                image: "",
+                details:""
+            },
+            8: {
+                name: "",
+                image: "",
+                details:""
+            },
+            7: {
+                name: "",
+                image: "",
+                details:""
+            },
+            6: {
+                name: "",
+                image: "",
+                details:""
+            },
+            5: {
+                name: "",
+                image: "",
+                details:""
+            },
+            4: {
+                name: "",
+                image: "",
+                details:""
+            },
+            3: {
+                name: "",
+                image: "",
+                details:""
+            },
+            2: {
+                name: "",
+                image: "",
+                details:""
+            },
+            1: {
+                name: "",
+                image: "",
+                details:""
+            },
+        };
+
+        // Get booth number from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const boothNumber = urlParams.get('booth');
+
+        // Load booth data based on booth number
+        if (boothNumber && booths[boothNumber]) {
+            const booth = booths[boothNumber];
+            document.getElementById('booth-title').textContent = booth.name;
+            document.getElementById('booth-image').innerHTML = `<img src="${booth.image}" alt="${booth.name}" style="max-width: 100%; height: auto;">`;
+            document.getElementById('booth-details').textContent = booth.details;
+        } else {
+            document.getElementById('booth-title').textContent = "Booth Not Found";
+            document.getElementById('booth-details').textContent = "Sorry, we couldn't find the details for this booth.";
+        }
+    </script>
+</body>
+</html>
