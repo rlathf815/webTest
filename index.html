@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta
             name="viewport"
-            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+            content="width=device-width, initial-scale=1.0, minimum-scale=0.1, maximum-scale=5.0, user-scalable=yes">
 
         <title>진로 박람회</title>
         <link rel="stylesheet" href="styles copy.css">
@@ -203,41 +203,6 @@
         <footer>
             <p>의왕시진로지원센터 꿈터</p>
         </footer>
-        <script>
-            window.addEventListener("orientationchange", function () {
-                // Check if the device is in portrait mode
-                if (window.orientation === 0 || window.orientation === 180) {
-                    document
-                        .querySelector('.landscape-message')
-                        .style
-                        .display = 'block';
-                    document
-                        .querySelector('.content')
-                        .style
-                        .display = 'none';
-                } else {
-                    document
-                        .querySelector('.landscape-message')
-                        .style
-                        .display = 'none';
-                    document
-                        .querySelector('.content')
-                        .style
-                        .display = 'block';
-                }
-            });
-
-            // Initial check when the page loads
-            if (window.orientation === 0 || window.orientation === 180) {
-                document
-                    .querySelector('.landscape-message')
-                    .style
-                    .display = 'block';
-                document
-                    .querySelector('.content')
-                    .style
-                    .display = 'none';
-            }
-        </script>
+        
     </body>
 </html>
