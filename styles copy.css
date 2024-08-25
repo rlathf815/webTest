@@ -7,6 +7,9 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f7fc;
+    width: 1280px; /* Fixed width */
+    margin: 0 auto; /* Center the body content */
+    overflow-x: scroll; /* Allow horizontal scrolling */
 }
 
 .header {
@@ -24,48 +27,55 @@ body {
     color: #ff7a7a;
 }
 
+.booth-container {
+    width: 1280px; /* Fixed width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .main-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
+    padding: 5px;
+    width: 1280px; /* Fixed width */
     margin: 0 auto;
 }
 
 .category-box, .special-exhibition, .unique-jobs {
     background-color: #ffffff;
-    padding: 10px;
+    padding: 5px;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100px;
 }
 
 h3 {
     text-align: center;
-    font-size: 15px;
+    font-size: 12px;
     color: #333333;
-    margin-bottom: 10px;
-}
- 
-.career-boxes,.unique-jobs-boxes {
-    display: flex;
-    justify-content: space-between; /* 상자들 간 간격을 균등하게 */
-    gap: 0.5px; /* 상자 사이의 간격 */
-    flex-wrap: nowrap; /* 줄 바꿈 없애기 */
-    align-items: flex-start; /* 내용물에 맞게 높이를 자동으로 맞추기 */
+    margin-bottom: 5px;
 }
 
-.career-boxes .box,
-.unique-jobs-boxes .box  {
-    width: calc(16.6% - 10px); /* 한 줄에 6개가 들어가도록 너비 설정 */
+.career-boxes, .unique-jobs-boxes {
+    display: flex;
+    justify-content: flex-start; /* Align boxes to the left */
+    gap: 1px;
+    flex-wrap: nowrap; /* Prevent wrapping to the next line */
+    align-items: flex-start;
+}
+
+.career-boxes .box, .unique-jobs-boxes .box {
+    width: 100%;
     background-color: #88c1ff;
     padding: 2px;
     text-align: center;
     color: white;
     font-size: 9px;
     border-radius: 3px;
-    box-sizing: border-box; /* 패딩이 높이에 영향을 미치지 않도록 */
-    
+    box-sizing: border-box;
+    height: 60px;
 }
 
 .special-exhibition {
@@ -75,35 +85,41 @@ h3 {
     font-size: 14px;
     border-radius: 5px;
 }
+
 .container {
-    
     display: flex;
     margin: 10px;
+    justify-content: center;
 }
+
 button {
     background: none;
     border: none;
     padding: 0;
 }
 
-/* Ensuring button box style is consistent */
 button.box {
     padding: 10px;
 }
+
 .column {
-    width: calc(9.09% - 10px);
+    flex-basis: 30%;
     display: flex;
     flex-direction: column;
     margin-right: 10px;
 }
-.photobooth-column{
+
+.photobooth-column {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 30%;
+    margin-right: 10px;
 }
+
 .box {
-    width: 90px;
-    height: 60px;
+    width: 100%;
+    height: 80px; /* Fixed box height */
     border: 1px solid #ddd;
     display: flex;
     justify-content: center;
@@ -152,27 +168,6 @@ button.box {
     color: white;
     font-size: 18px;
 }
-/* Colors for different columns */
-.pink {
-    background-color: pink;
-}
-
-.green {
-    background-color: lightgreen;
-}
-
-.lightgreen {
-    background-color: lightblue;
-}
-.big-text {
-    grid-column: span 2;
-    background-color: #f5a623;
-    text-align: center;
-    color: white;
-    font-size: 48px;
-    padding: 50px;
-    border-radius: 10px;
-}
 
 footer {
     background-color: #4b88a2;
@@ -180,4 +175,7 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 40px;
+    width: 1280px; /* Fixed width */
+    margin-left: auto;
+    margin-right: auto;
 }
