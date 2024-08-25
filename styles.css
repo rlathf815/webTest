@@ -7,9 +7,12 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f7fc;
-    width: 1280px; /* Fixed width */
-    margin: 0 auto; /* Center the body content */
-    overflow-x: scroll; /* Allow horizontal scrolling */
+    width: 1280px;
+    /* Fixed width */
+    margin: 0 auto;
+    /* Center the body content */
+    overflow-x: scroll;
+    /* Allow horizontal scrolling */
 }
 
 .header {
@@ -28,7 +31,8 @@ body {
 }
 
 .booth-container {
-    width: 1280px; /* Fixed width */
+    width: 1280px;
+    /* Fixed width */
     margin-left: auto;
     margin-right: auto;
 }
@@ -38,15 +42,18 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 5px;
-    width: 1280px; /* Fixed width */
+    width: 1280px;
+    /* Fixed width */
     margin: 0 auto;
 }
 
-.category-box, .special-exhibition, .unique-jobs {
+.category-box,
+.special-exhibition,
+.unique-jobs {
     background-color: #ffffff;
     padding: 5px;
     border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
     height: 100px;
 }
@@ -58,15 +65,19 @@ h3 {
     margin-bottom: 5px;
 }
 
-.career-boxes, .unique-jobs-boxes {
+.career-boxes,
+.unique-jobs-boxes {
     display: flex;
-    justify-content: flex-start; /* Align boxes to the left */
+    justify-content: flex-start;
+    /* Align boxes to the left */
     gap: 1px;
-    flex-wrap: nowrap; /* Prevent wrapping to the next line */
+    flex-wrap: nowrap;
+    /* Prevent wrapping to the next line */
     align-items: flex-start;
 }
 
-.career-boxes .box, .unique-jobs-boxes .box {
+.career-boxes .box,
+.unique-jobs-boxes .box {
     width: 100%;
     background-color: #88c1ff;
     padding: 2px;
@@ -119,49 +130,60 @@ button.box {
 
 .box {
     width: 100%;
-    height: 80px; /* Fixed box height */
+    height: 80px;
+    /* Fixed box height */
     border: 1px solid #ddd;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 5px 5px;
+    margin: 5px;
     font-size: 14px;
     font-weight: bold;
 }
 
 .box.touch-active {
     filter: brightness(0.8);
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  }
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 .pink {
     background-color: pink;
 }
 
-  .green {
+.green {
     background-color: lightgreen;
-  }
-  
-  .lightgreen {
+}
+
+.lightgreen {
     background-color: lightblue;
-  }
-  
-  .yellow {
+}
+
+.yellow {
     background-color: lightyellow;
-  }
-  
-  .blue {
+}
+
+.blue {
     background-color: lightblue;
-  }
-  
-  .darkblue {
+}
+
+.darkblue {
     background-color: #add8e6;
-  }
-  
-  .darkestblue {
+}
+
+.darkestblue {
     background-color: #87ceeb;
-  }
-  
+}
+
+.shelter {
+    background-color: darkgreen;
+    color: white;
+}
+
+.photozone {
+    background-color: darkblue;
+    color: white;
+    font-size: 18px;
+}
 
 footer {
     background-color: #4b88a2;
@@ -169,7 +191,8 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 40px;
-    width: 1280px; /* Fixed width */
+    width: 1280px;
+    /* Fixed width */
     margin-left: auto;
     margin-right: auto;
 }
