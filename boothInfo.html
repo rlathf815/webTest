@@ -41,34 +41,7 @@
         }
 
         /* Loader CSS */
-        #loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-        }
-
-        #loader > div {
-            width: 100%;
-            height: 12.5%; /* Divided by 8 for equal heights */
-            background: blueviolet;
-            transform: translateY(0); /* Start in place */
-            transition: transform 500ms ease-in-out;
-        }
-
-        /* Sequential animation delay for each bar */
-        #loader > div:nth-child(1) { transition-delay: 100ms; }
-        #loader > div:nth-child(2) { transition-delay: 200ms; }
-        #loader > div:nth-child(3) { transition-delay: 300ms; }
-        #loader > div:nth-child(4) { transition-delay: 400ms; }
-        #loader > div:nth-child(5) { transition-delay: 500ms; }
-        #loader > div:nth-child(6) { transition-delay: 600ms; }
-        #loader > div:nth-child(7) { transition-delay: 700ms; }
-        #loader > div:nth-child(8) { transition-delay: 800ms; }
+       
 
         /* When the body has the 'reveal' class, the loader bars move out of the screen */
         body.reveal #loader > div {
@@ -88,17 +61,7 @@
 </head>
 <body>
     <!-- Loader -->
-    <div id="loader">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-
+    
 
     <div class="booth-container">
         <div id="booth-title" class="booth-title"></div>
@@ -415,21 +378,7 @@
         console.log("DOMContentLoaded event fired, starting loader animation.");
         setTimeout(() => {
             document.body.classList.add("reveal");
-
-            const loaderBars = document.querySelectorAll("#loader > div");
-            let completedTransitions = 0;
-
-            // 각 div의 transition이 완료될 때마다 확인
-            loaderBars.forEach((bar) => {
-                bar.addEventListener("transitionend", () => {
-                    completedTransitions += 1;
-                    // 모든 bar가 화면 밖으로 나가면 loader를 숨김
-                    if (completedTransitions === loaderBars.length) {
-                        loader.style.display = "none";
-                    }
-                });
-            });
-        }, 1000);
+        }, 100); 
     });
 </script>
 </body>
