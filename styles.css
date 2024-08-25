@@ -55,9 +55,8 @@ h3 {
     align-items: flex-start;
 }
 
-.career-boxes .box,
-.unique-jobs-boxes .box {
-    width: calc(16.6% - 10px); /* 한 줄에 6개가 들어가도록 너비 설정 */
+.career-boxes .box, .unique-jobs-boxes .box {
+    width: calc(16.6% - 10px);
     background-color: #88c1ff;
     padding: 2px;
     text-align: center;
@@ -163,16 +162,71 @@ footer {
     margin-top: 40px;
 }
 
-/* Force portrait mode to show the content rotated */
-@media only screen and (orientation: portrait) {
-    body {
-        transform: rotate(90deg);
-        transform-origin: left top;
-        width: 100vh; /* Swap width and height */
-        height: 100vw;
-        overflow-x: hidden;
-        position: absolute;
-        top: 100%;
-        left: 0;
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .career-boxes .box, .unique-jobs-boxes .box {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .box {
+        width: 100%;
+        height: auto;
+        font-size: 12px;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+    h3 {
+        font-size: 14px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .header p {
+        font-size: 16px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .box {
+        font-size: 10px;
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 18px;
+    }
+
+    .header p {
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 15px;
+        font-size: 12px;
     }
 }
