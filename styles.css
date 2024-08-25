@@ -129,68 +129,45 @@ button.box {
     font-size: 14px;
     font-weight: bold;
 }
-.box:hover {
+.box:active {
     background-color: #f2f2f2;
     border-color: #ccc;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    pointer-events: none;
 }
+.box.touch-active {
+    background-color: #f2f2f2;
+    border-color: #ccc;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
 .pink {
     background-color: pink;
 }
-.pink:hover {
-    background-color: #ce8591;
-}
-.green {
+
+  .green {
     background-color: lightgreen;
-}
-.green:hover {
-    background-color: #c6efce;
-}
-
-.lightgreen {
+  }
+  
+  .lightgreen {
     background-color: lightblue;
-}
-.lightgreen:hover {
-    background-color: #add8e6;
-}
-.yellow {
+  }
+  
+  .yellow {
     background-color: lightyellow;
-}
-.yellow:hover {
-    background-color: #ffffcc;
-}
-
-.blue {
+  }
+  
+  .blue {
     background-color: lightblue;
-}
-.blue:hover {
-    background-color: #87ceeb;
-}
-
-.darkblue {
+  }
+  
+  .darkblue {
     background-color: #add8e6;
-}
-.darkblue:hover {
-    background-color: #6495ed;
-}
-
-.darkestblue {
+  }
+  
+  .darkestblue {
     background-color: #87ceeb;
-}
-.darkestblue {
-    background-color: #87ceeb;
-}
-
-.shelter {
-    background-color: darkgreen;
-    color: white;
-}
-
-.photozone {
-    background-color: darkblue;
-    color: white;
-    font-size: 18px;
-}
+  }
+  
 
 footer {
     background-color: #4b88a2;
