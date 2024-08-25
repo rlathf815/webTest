@@ -26,18 +26,20 @@ body {
 
 .main-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 400px); /* Fixed column width */
     gap: 20px;
-    padding: 20px;
+    padding: 5px;
+    justify-content: center; /* Centers the grid items */
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .category-box, .special-exhibition, .unique-jobs {
     background-color: #ffffff;
-    padding: 10px;
+    padding: 5px;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Fixed width */
 }
 
 h3 {
@@ -51,12 +53,12 @@ h3 {
     display: flex;
     justify-content: space-between;
     gap: 0.5px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: flex-start;
 }
 
 .career-boxes .box, .unique-jobs-boxes .box {
-    width: calc(16.6% - 10px);
+    width: 50px; /* Fixed box width */
     background-color: #88c1ff;
     padding: 2px;
     text-align: center;
@@ -76,13 +78,22 @@ h3 {
 
 .container {
     display: flex;
-    flex-wrap: wrap;
     margin: 10px;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+button.box {
+    padding: 10px;
 }
 
 .column {
-    width: calc(9.09% - 10px);
+    width: 120px; /* Fixed column width */
     display: flex;
     flex-direction: column;
     margin-right: 10px;
@@ -92,13 +103,13 @@ h3 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%; /* Make photobooth column take full width */
-    margin: 10px 0;
+    width: 120px; /* Fixed width */
+    margin-right: 10px;
 }
 
 .box {
-    width: 90px;
-    height: 60px;
+    width: 120px; /* Fixed box width */
+    height: 80px; /* Fixed box height */
     border: 1px solid #ddd;
     display: flex;
     justify-content: center;
@@ -159,34 +170,10 @@ footer {
 /* Mobile Optimization */
 @media (max-width: 768px) {
     .main-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, 300px); /* Still uses fixed width */
         gap: 10px;
         padding: 10px;
-    }
-
-    .career-boxes .box, .unique-jobs-boxes .box {
-        width: 100%;
-        margin: 5px 0;
-    }
-
-    .box {
-        width: 100%;
-        height: auto;
-        font-size: 12px;
-        padding: 20px;
-        border-radius: 5px;
-    }
-
-    h3 {
-        font-size: 14px;
-    }
-
-    .header h1 {
-        font-size: 20px;
-    }
-
-    .header p {
-        font-size: 16px;
+        justify-content: center;
     }
 
     .container {
@@ -195,34 +182,36 @@ footer {
     }
 
     .column {
-        width: 100%;
+        width: 120px; /* Fixed column width */
         margin-right: 0;
-        margin-bottom: 20px; /* Add spacing between columns */
+        margin-bottom: 10px;
     }
 
     .photobooth-column {
-        width: 100%;
-        margin-top: 20px;
+        width: 120px; /* Fixed width */
+    }
+
+    .box {
+        width: 120px;
+        height: 80px;
+        font-size: 12px;
+        padding: 10px;
+        border-radius: 5px;
     }
 }
 
 @media (max-width: 480px) {
     .main-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, 300px); /* Still uses fixed width */
         gap: 5px;
+        justify-content: center;
     }
 
     .box {
+        width: 120px;
+        height: 80px;
         font-size: 10px;
-        padding: 15px;
-    }
-
-    .header h1 {
-        font-size: 18px;
-    }
-
-    .header p {
-        font-size: 14px;
+        padding: 10px;
     }
 
     footer {
