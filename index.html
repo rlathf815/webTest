@@ -144,3 +144,22 @@
     </footer>
 </body>
 </html>
+<script>
+    window.addEventListener("orientationchange", function() {
+        // Check if the device is in portrait mode
+        if (window.orientation === 0 || window.orientation === 180) {
+            document.querySelector('.landscape-message').style.display = 'block';
+            document.querySelector('.content').style.display = 'none';
+        } else {
+            document.querySelector('.landscape-message').style.display = 'none';
+            document.querySelector('.content').style.display = 'block';
+        }
+    });
+
+    // Initial check when the page loads
+    if (window.orientation === 0 || window.orientation === 180) {
+        document.querySelector('.landscape-message').style.display = 'block';
+        document.querySelector('.content').style.display = 'none';
+    }
+</script>
+
