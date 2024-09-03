@@ -79,9 +79,8 @@
                             fetch(scriptUrl, {
                                 method: 'POST',
                                 headers: {
-                                    'Content-Type': 'application/json'
+                                    'Content-Type': 'text/plain'
                                 },
-                                mode: 'cors', // 이 설정을 추가해 CORS 모드로 실행되도록 함
                                 body: JSON.stringify({school: school, grade: grade, name: name})
                             })
                                 .then(response => response.json())
