@@ -5,7 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Booth Reservation</title>
         <style>
-            /* 기존 스타일 유지 */
+            .reservation-list {
+                margin-top: 20px;
+                width: 100%;
+                max-width: 400px;
+                border-collapse: collapse;
+            }
+            .reservation-list td,
+            .reservation-list th {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            .reservation-list th {
+                background-color: #f2f2f2;
+            }
         </style>
     </head>
     <body>
@@ -16,8 +30,22 @@
             <input type="text" id="name" placeholder="이름" required="required">
             <button id="reserve-button">예약하기</button>
             <div id="response-message"></div>
-        </div>
 
+            <!-- 예약 리스트를 표시할 테이블 -->
+            <table class="reservation-list" id="reservation-list">
+                <thead>
+                    <tr>
+                        <th>순번</th>
+                        <th>학교</th>
+                        <th>학년</th>
+                        <th>이름</th>
+                    </tr>
+                </thead>
+                <tbody id="reservation-list-body">
+                    <!-- 여기에 새로운 예약이 추가됩니다 -->
+                </tbody>
+            </table>
+        </div>
         <script>
             const boothScripts = {
                 56: 'https://script.google.com/macros/s/AKfycbxUvOXsH9txyu4HYPmxy5OvYSziC2Rnj_tiVRD' +
@@ -29,9 +57,15 @@
             document
                 .getElementById('reserve-button')
                 .addEventListener('click', () => {
-                    const school = encodeURIComponent(document.getElementById('school').value);
-                    const grade = encodeURIComponent(document.getElementById('grade').value);
-                    const name = encodeURIComponent(document.getElementById('name').value);
+                    const school = document
+                        .getElementById('school')
+                        .value;
+                    const grade = document
+                        .getElementById('grade')
+                        .value;
+                    const name = document
+                        .getElementById('name')
+                        .value;
 
                     if (school && grade && name) {
                         const urlParams = new URLSearchParams(window.location.search);
@@ -43,9 +77,9 @@
                             fetch(scriptUrl, {
                                 method: 'POST',
                                 headers: {
-                                    'Content-Type': 'application/x-www-form-urlencoded'
+                                    'Content-Type': 'application/json'
                                 },
-                                body: `school=${school}&grade=${grade}&name=${name}`
+                                body: JSON.stringify({school: school, grade: grade, name: name})
                             })
                                 .then(response => response.json())
                                 .then(data => {
@@ -53,6 +87,13 @@
                                         document
                                             .getElementById('response-message')
                                             .innerHTML = `<div class="success-message">예약이 성공적으로 완료되었습니다!</div>`;
+
+                                        // 새로운 예약을 리스트에 추가
+                                        const reservationListBody = document.getElementById('reservation-list-body');
+                                        const newRow = document.createElement('tr');
+                                        newRow.innerHTML = `<td>${data.order}</td><td>${data.school}</td><td>${data.grade}</td><td>${data.name}</td>`;
+                                        reservationListBody.appendChild(newRow);
+
                                     } else {
                                         document
                                             .getElementById('response-message')
