@@ -40,6 +40,23 @@
             text-align: center;
         }
 
+
+        .reserve-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .reserve-button:hover {
+            background-color: #0056b3;
+        }
+
         /* Loader CSS */
        
 
@@ -67,6 +84,7 @@
         <div id="booth-title" class="booth-title"></div>
         <div id="booth-image" class="booth-image"></div>
         <div id="booth-details" class="booth-details"></div>
+        <button id="reserve-button" class="reserve-button">사전예약</button>
     </div>
 
     <script>
@@ -380,6 +398,17 @@
             document.body.classList.add("reveal");
         }, 100); 
     });
+     // 예약 버튼 클릭 시 예약 페이지로 이동
+     document.getElementById('reserve-button').addEventListener('click', () => {
+            window.location.href = `reserve.html?booth=${boothNumber}`;
+        });
+
+        // Fade-in effect
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+                document.body.classList.add("reveal");
+            }, 100);
+        });
 </script>
 </body>
 </html>
