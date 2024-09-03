@@ -79,9 +79,9 @@
                             fetch(scriptUrl, {
                                 method: 'POST',
                                 headers: {
-                                    'Content-Type': 'text/plain'
+                                    'Content-Type': 'application/x-www-form-urlencoded'
                                 },
-                                body: JSON.stringify({school: school, grade: grade, name: name})
+                                body: new URLSearchParams({school: school, grade: grade, name: name}).toString()
                             })
                                 .then(response => response.json())
                                 .then(data => {
