@@ -55,54 +55,55 @@
         };
 
         document.getElementById('reserve-button').addEventListener('click', () => {
-            const school = document.getElementById('school').value;
-            const grade = document.getElementById('grade').value;
-            const name = document.getElementById('name').value;
+    const school = document.getElementById('school').value;
+    const grade = document.getElementById('grade').value;
+    const name = document.getElementById('name').value;
 
-            if (school && grade && name) {
-                const urlParams = new URLSearchParams(window.location.search);
-                const boothNumber = urlParams.get('booth');
+    if (school && grade && name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const boothNumber = urlParams.get('booth');
 
-                const scriptUrl = boothScripts[boothNumber];
+        const scriptUrl = boothScripts[boothNumber];
 
-                if (scriptUrl) {
-                    fetch(scriptUrl, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            school: school,
-                            grade: grade,
-                            name: name
-                        }),
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.result === 'success') {
-                            document.getElementById('response-message').innerHTML = `<div class="success-message">예약이 성공적으로 완료되었습니다!</div>`;
-                            
-                            // 새로운 예약을 리스트에 추가
-                            const reservationListBody = document.getElementById('reservation-list-body');
-                            const newRow = document.createElement('tr');
-                            newRow.innerHTML = `<td>${data.order}</td><td>${data.school}</td><td>${data.grade}</td><td>${data.name}</td>`;
-                            reservationListBody.appendChild(newRow);
+        if (scriptUrl) {
+            fetch(scriptUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    school: school,
+                    grade: grade,
+                    name: name
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === 'success') {
+                    document.getElementById('response-message').innerHTML = `<div class="success-message">예약이 성공적으로 완료되었습니다!</div>`;
+                    
+                    // 새로운 예약을 리스트에 추가
+                    const reservationListBody = document.getElementById('reservation-list-body');
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `<td>${data.order}</td><td>${data.school}</td><td>${data.grade}</td><td>${data.name}</td>`;
+                    reservationListBody.appendChild(newRow);
 
-                        } else {
-                            document.getElementById('response-message').innerHTML = `<div class="error-message">예약에 실패했습니다. 다시 시도해주세요.</div>`;
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        document.getElementById('response-message').innerHTML = `<div class="error-message">예약 중 오류가 발생했습니다.</div>`;
-                    });
                 } else {
-                    document.getElementById('response-message').innerHTML = `<div class="error-message">유효하지 않은 부스 번호입니다.</div>`;
+                    document.getElementById('response-message').innerHTML = `<div class="error-message">예약에 실패했습니다. 다시 시도해주세요.</div>`;
                 }
-            } else {
-                document.getElementById('response-message').innerHTML = `<div class="error-message">모든 필드를 입력해주세요.</div>`;
-            }
-        });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('response-message').innerHTML = `<div class="error-message">예약 중 오류가 발생했습니다.</div>`;
+            });
+        } else {
+            document.getElementById('response-message').innerHTML = `<div class="error-message">유효하지 않은 부스 번호입니다.</div>`;
+        }
+    } else {
+        document.getElementById('response-message').innerHTML = `<div class="error-message">모든 필드를 입력해주세요.</div>`;
+    }
+});
+
     </script>
 </body>
 </html>
