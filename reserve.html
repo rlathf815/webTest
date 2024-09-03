@@ -1,73 +1,81 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booth Reservation</title>
-    <style>
-        /* 기존 스타일 유지 */
-    </style>
-</head>
-<body>
-    <div class="reservation-container">
-        <h1>Booth Reservation</h1>
-        <input type="text" id="school" placeholder="학교" required>
-        <input type="number" id="grade" placeholder="학년" required>
-        <input type="text" id="name" placeholder="이름" required>
-        <button id="reserve-button">예약하기</button>
-        <div id="response-message"></div>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Booth Reservation</title>
+        <style>
+            /* 기존 스타일 유지 */
+        </style>
+    </head>
+    <body>
+        <div class="reservation-container">
+            <h1>Booth Reservation</h1>
+            <input type="text" id="school" placeholder="학교" required="required">
+            <input type="number" id="grade" placeholder="학년" required="required">
+            <input type="text" id="name" placeholder="이름" required="required">
+            <button id="reserve-button">예약하기</button>
+            <div id="response-message"></div>
+        </div>
 
-    <script>
-        const boothScripts = {
-            56: 'https://script.google.com/macros/s/AKfycbxUvOXsH9txyu4HYPmxy5OvYSziC2Rnj_tiVRDyClC9AQRgCwO7r9QzsTIuJdTEC26feQ/exec',
-            55: 'YOUR_GOOGLE_APPS_SCRIPT_URL_FOR_BOOTH_55',
-            //테스트 생략
-        };
+        <script>
+            const boothScripts = {
+                56: 'https://script.google.com/macros/s/AKfycbxUvOXsH9txyu4HYPmxy5OvYSziC2Rnj_tiVRD' +
+                        'yClC9AQRgCwO7r9QzsTIuJdTEC26feQ/exec',
+                55: 'YOUR_GOOGLE_APPS_SCRIPT_URL_FOR_BOOTH_55',
+                //테스트 생략
+            };
 
-        document.getElementById('reserve-button').addEventListener('click', () => {
-    const school = document.getElementById('school').value;
-    const grade = document.getElementById('grade').value;
-    const name = document.getElementById('name').value;
+            document
+                .getElementById('reserve-button')
+                .addEventListener('click', () => {
+                    const school = encodeURIComponent(document.getElementById('school').value);
+                    const grade = encodeURIComponent(document.getElementById('grade').value);
+                    const name = encodeURIComponent(document.getElementById('name').value);
 
-    if (school && grade && name) {
-        const urlParams = new URLSearchParams(window.location.search);
-        const boothNumber = urlParams.get('booth');
+                    if (school && grade && name) {
+                        const urlParams = new URLSearchParams(window.location.search);
+                        const boothNumber = urlParams.get('booth');
 
-        const scriptUrl = boothScripts[boothNumber];
+                        const scriptUrl = boothScripts[boothNumber];
 
-        if (scriptUrl) {
-            fetch(scriptUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    school: school,
-                    grade: grade,
-                    name: name
-                }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.result === 'success') {
-                    document.getElementById('response-message').innerHTML = `<div class="success-message">예약이 성공적으로 완료되었습니다!</div>`;
-                } else {
-                    document.getElementById('response-message').innerHTML = `<div class="error-message">예약에 실패했습니다. 다시 시도해주세요.</div>`;
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                document.getElementById('response-message').innerHTML = `<div class="error-message">예약 중 오류가 발생했습니다.</div>`;
-            });
-        } else {
-            document.getElementById('response-message').innerHTML = `<div class="error-message">유효하지 않은 부스 번호입니다.</div>`;
-        }
-    } else {
-        document.getElementById('response-message').innerHTML = `<div class="error-message">모든 필드를 입력해주세요.</div>`;
-    }
-});
-
-    </script>
-</body>
+                        if (scriptUrl) {
+                            fetch(scriptUrl, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/x-www-form-urlencoded'
+                                },
+                                body: `school=${school}&grade=${grade}&name=${name}`
+                            })
+                                .then(response => response.json())
+                                .then(data => {
+                                    if (data.result === 'success') {
+                                        document
+                                            .getElementById('response-message')
+                                            .innerHTML = `<div class="success-message">예약이 성공적으로 완료되었습니다!</div>`;
+                                    } else {
+                                        document
+                                            .getElementById('response-message')
+                                            .innerHTML = `<div class="error-message">예약에 실패했습니다. 다시 시도해주세요.</div>`;
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error('Error:', error);
+                                    document
+                                        .getElementById('response-message')
+                                        .innerHTML = `<div class="error-message">예약 중 오류가 발생했습니다.</div>`;
+                                });
+                        } else {
+                            document
+                                .getElementById('response-message')
+                                .innerHTML = `<div class="error-message">유효하지 않은 부스 번호입니다.</div>`;
+                        }
+                    } else {
+                        document
+                            .getElementById('response-message')
+                            .innerHTML = `<div class="error-message">모든 필드를 입력해주세요.</div>`;
+                    }
+                });
+        </script>
+    </body>
 </html>
