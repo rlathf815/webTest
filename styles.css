@@ -76,10 +76,21 @@ h3 {
     align-items: flex-start;
 }
 
-.career-boxes .box,
+.career-boxes .box
+{
+    width: 100%;
+    background-color: #fa9d9d;
+    padding: 2px;
+    text-align: center;
+    color: white;
+    font-size: 9px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    height: 60px;
+}
 .unique-jobs-boxes .box {
     width: 100%;
-    background-color: #88c1ff;
+    background-color: #002291;
     padding: 2px;
     text-align: center;
     color: white;
@@ -146,10 +157,22 @@ button.box {
     filter: brightness(0.8);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.pink {
+.ggi{
     background-color: pink;
 }
-
+.woori{
+    background-color: rgb(182, 230, 182);
+}
+.event{
+    background-color: rgb(243, 233, 139);
+}
+.choice{
+    background-color: rgb(163, 211, 230);
+}
+.future{
+    background-color: rgb(45, 121, 184);
+    color: white;
+}
 .green {
     background-color: lightgreen;
 }
