@@ -9,8 +9,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            opacity: 0; /* Start hidden */
-            transition: opacity 0.5s ease-in; /* Fade-in effect for the page content */
+            opacity: 0; 
+            transition: opacity 0.5s ease-in; 
         }
 
         .booth-container {
@@ -57,28 +57,14 @@
             background-color: #0056b3;
         }
 
-        /* Loader CSS */
-       
-
-        /* When the body has the 'reveal' class, the loader bars move out of the screen */
-        body.reveal #loader > div {
-            transform: translateY(100%); /* Move them off-screen */
-        }
-
-        /* Hide loader after animation is done */
-        body.reveal #loader {
-            display: none;
-        }
-
-        /* Fade-in effect for the content */
-        body.reveal {
-            opacity: 1;
-        }
     </style>
+    <script>
+        window.onload = function() {
+            document.body.style.opacity = "1";
+        };
+    </script>
 </head>
 <body>
-    <!-- Loader -->
-    
 
     <div class="booth-container">
         <div id="booth-title" class="booth-title"></div>
@@ -92,7 +78,7 @@
         const booths = {
             56: {
                 name: "특수분장사",
-                image: "images/booth56.png", // Replace with actual image path
+                image: "images/booth56.png",
                 details: "특수분장사에 대한 상세 정보입니다. 이 직업은 영화나 공연에서 특수한 분장을 담당합니다."
             },
             55: {
@@ -377,11 +363,9 @@
             },
         };
 
-        // Get booth number from URL parameter
         const urlParams = new URLSearchParams(window.location.search);
         const boothNumber = urlParams.get('booth');
 
-        // Load booth data based on booth number
         if (boothNumber && booths[boothNumber]) {
             const booth = booths[boothNumber];
             document.getElementById('booth-title').textContent = booth.name;
@@ -403,12 +387,6 @@
             window.location.href = `reserve.html?booth=${boothNumber}`;
         });
 
-        // Fade-in effect
-        document.addEventListener("DOMContentLoaded", () => {
-            setTimeout(() => {
-                document.body.classList.add("reveal");
-            }, 100);
-        });
 </script>
 </body>
 </html>

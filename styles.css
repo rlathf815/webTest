@@ -3,7 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+#user-info {
+    position: absolute;
+    top: 10px;
+    left: 10px; /* 좌측 상단으로 변경 */
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f7fc;
@@ -13,6 +24,8 @@ body {
     /* Center the body content */
     overflow-x: scroll;
     /* Allow horizontal scrolling */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .header {
