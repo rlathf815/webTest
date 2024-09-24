@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booth Information</title>
     <style>
+        @media (orientation: portrait) {
+	html {
+		transform: rotate(-90deg);
+		transform-origin: top left;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100vh;
+		height: 100vw;
+	}
+}
         body {
             font-family: Arial, sans-serif;
             margin: 0;
