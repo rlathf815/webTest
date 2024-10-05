@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 페이지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .notice {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .login-button:hover {
+            background-color: #0056b3;
+        }
+        .guest-login {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .guest-login button {
+            background-color: transparent;
+            color: gray;
+            font-size: 12px;
+            border: none;
+            cursor: pointer;
+        }
+        .guest-login button:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function loginAsUser() {
+            const studentType = document.getElementById('student-type').value;
+            const school = document.getElementById('school').value;
+            const studentId = document.getElementById('student-id').value;
+            const name = document.getElementById('name').value;
+    
+            localStorage.setItem('studentType', studentType);
+            localStorage.setItem('school', school);
+            localStorage.setItem('studentId', studentId);
+            localStorage.setItem('name', name);
+            localStorage.setItem('guestLogin', 'false');
+    
+            location.href = 'main.html';
+        }
+    
+        function loginAsGuest() {
+            localStorage.setItem('guestLogin', 'true');
+            location.href = 'main.html';
+        }
+    </script>
+</head>
+<body>
+
+<div class="login-container">
+    <h1>로그인</h1>
+    
+    <div class="input-group">
+        <label for="student-type">중학생/고등학생</label>
+        <select id="student-type" name="student-type">
+            <option value="middle">중학생</option>
+            <option value="high">고등학생</option>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label for="school">학교</label>
+        <input type="text" id="school" name="school" placeholder="학교명을 입력하세요">
+    </div>
+
+    <div class="input-group">
+        <label for="student-id">학번</label>
+        <input type="text" id="student-id" name="student-id" placeholder="학번을 입력하세요">
+    </div>
+
+    <div class="input-group">
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name" placeholder="이름을 입력하세요">
+    </div>
+
+    <div class="notice">
+        * 사전예약시 사용되는 정보이니 정확히 기재 바랍니다. <br>&ensp;잘못 기재시 체험이 불가할 수 있습니다.
+        <br>* 게스트로 로그인할 시 맵/부스정보 열람은 가능하나 <br>&ensp;사전예약은 불가합니다.
+    </div>
+
+    <!-- 로그인 버튼 -->
+    <button class="login-button" onclick="loginAsUser()">로그인</button>
+
+    <!-- 게스트로 로그인 버튼 -->
+    <div class="guest-login">
+        <button onclick="loginAsGuest()">게스트로 로그인하기</button>
+    </div>
+</div>
+
+</body>
+</html>
