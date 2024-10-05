@@ -34,8 +34,9 @@
 }
 body {
     font-family: 'Arial', sans-serif;
-    background-image: url('images/배경.png');
+    background-image: url('images/배경.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
     width: 1280px;
     /* Fixed width */
     margin: 0 auto;
