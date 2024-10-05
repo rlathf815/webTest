@@ -239,15 +239,22 @@ button {
 }
 .ggi{
     background-color: #fed1f5;
+    color: rgb(0, 0, 0);
 }
 .woori{
     background-color: #ddecca;
+    color: rgb(0, 0, 0);
+
 }
 .event{
     background-color: #feebb6;
+    color: rgb(0, 0, 0);
+
 }
 .choice{
     background-color: #b8e9ff;
+    color: rgb(0, 0, 0);
+
 }
 .future{
     background-color: #0e6ca5;
