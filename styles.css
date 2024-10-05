@@ -16,7 +16,6 @@
 }
 html{
     overflow-y: hidden; 
-    height: 100vh;
 }
 @media screen and (orientation: landscape) {
     meta[name="viewport"] {
@@ -52,7 +51,6 @@ body {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
     overflow-y: hidden; 
-    height: 100vh;
 }
 
 .header {
