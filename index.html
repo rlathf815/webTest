@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로고 및 버튼 페이지</title>
+    <title>모바일 최적화 페이지</title>
     <style>
         * {
             margin: 0;
@@ -17,48 +17,59 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh; /* 화면 전체 높이 */
-            background-color: #f4f4f4;
+            background-color: #f0f0f0; /* 부드러운 배경색 */
             padding: 20px;
         }
 
         .container {
             text-align: center;
             width: 100%;
-            max-width: 400px; /* 모바일 화면에 맞는 최대 너비 */
+            max-width: 380px; /* 모바일에서 적당한 최대 너비 */
+            background-color: white; /* 배경 흰색으로 설정 */
+            padding: 30px 20px; /* 내부 여백 추가 */
+            border-radius: 15px; /* 모서리를 둥글게 */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
         }
 
         .logo {
-            width: 100px; /* 모바일 화면에 맞춰 로고 크기 설정 */
-            margin-bottom: 30px;
+            width: 120px; /* 모바일 화면에 맞춰 로고 크기 설정 */
+            margin-bottom: 30px; /* 로고와 버튼 사이 여백 */
         }
 
         .button-container {
             display: flex;
             flex-direction: column; /* 버튼을 세로로 배치 */
-            gap: 20px; /* 버튼 사이의 간격 설정 */
+            gap: 15px; /* 버튼 사이의 간격 설정 */
         }
 
         .action-button {
-            background-color: #4b88a2;
+            background-color: #4CAF50; /* 부드러운 초록색 버튼 */
             color: white;
             padding: 15px;
-            font-size: 16px;
+            font-size: 18px; /* 버튼 글자 크기 약간 큼 */
             border: none;
-            border-radius: 5px;
+            border-radius: 10px; /* 버튼의 모서리 둥글게 */
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease; /* 부드러운 효과 */
             width: 100%; /* 버튼이 부모 컨테이너의 너비를 차지 */
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* 버튼에 그림자 효과 */
         }
 
         .action-button:hover {
-            background-color: #35738f;
+            background-color: #45a049; /* 호버 시 색상 조금 어둡게 */
+            transform: translateY(-2px); /* 버튼을 살짝 올리는 효과 */
         }
 
+        .action-button:active {
+            transform: translateY(0); /* 클릭 시 원래 위치로 돌아오게 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 클릭 시 그림자 효과 변경 */
+        }
+
+        /* 화면이 더 큰 경우 */
         @media (min-width: 768px) {
-            /* 태블릿 이상의 화면에서는 버튼 크기를 조정 */
             .action-button {
-                font-size: 18px;
-                padding: 20px;
+                font-size: 20px;
+                padding: 18px;
             }
         }
     </style>
@@ -71,9 +82,8 @@
         <!-- 버튼들 -->
         <div class="button-container">
             <button class="action-button" onclick="location.href='#'">만족도 조사</button>
-            <button class="action-button" onclick="location.href='main.html'">모바일 리플렛</button>
+            <button class="action-button" onclick="location.href='#'">모바일 리플렛</button>
         </div>
     </div>
 </body>
-<script src="touch-events.js"></script>
 </html>
