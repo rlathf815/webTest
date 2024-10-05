@@ -47,6 +47,22 @@
                     console.error("'user-info' 요소를 찾을 수 없습니다.");
                 }
             });
+            function adjustViewport() {
+            const metaViewport = document.querySelector("meta[name=viewport]");
+            if (window.innerWidth > window.innerHeight) {
+                // Landscape 모드일 때
+                metaViewport.setAttribute("content", "width=device-width, initial-scale=0.5, maximum-scale=5.0, user-scalable=yes");
+            } else {
+                // Portrait 모드일 때
+                metaViewport.setAttribute("content", "width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes");
+            }
+        }
+
+        // 화면 회전이 일어날 때마다 adjustViewport 함수를 실행
+        window.addEventListener("resize", adjustViewport);
+
+        // 페이지 로드 시 한 번 실행
+        window.addEventListener("load", adjustViewport);
         </script>
     </head>
     <body>
