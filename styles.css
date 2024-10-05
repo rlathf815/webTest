@@ -48,8 +48,8 @@ body {
     overflow-x: scroll;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    -webkit-text-size-adjust: 100%;
 }
-
 .header {
     text-align: center;
     margin: 20px 0;
