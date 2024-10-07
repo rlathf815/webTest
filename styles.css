@@ -214,6 +214,16 @@ button {
     font-size: 12px; 
     font-weight: bold;
 }
+.star {
+    position: absolute;
+    top: 0px;
+    right: 1px;
+    font-size: 12px; 
+    color: red;     
+}
+.redstar{
+    color: red;
+}
 .career-booth-number {
     position: absolute; 
     top: 1px; 
@@ -296,14 +306,8 @@ button {
     font-family: "Do Hyeon", sans-serif;
 }
 
-footer {
-    background-color: #4b88a2;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    width: 1280px;
-    /* Fixed width */
-    margin-left: auto;
-    margin-right: auto;
+.footer{
+    font-family: "Orbit", sans-serif;
+    font-weight: bold;
+
 }
