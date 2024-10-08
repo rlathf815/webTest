@@ -51,19 +51,12 @@ body {
     -webkit-text-size-adjust: 100%;
 }
 .header {
-    text-align: center;
-    margin: 20px 0;
+    font-family: "Orbit", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    padding-left: 15px;
 }
 
-.header h1 {
-    font-size: 24px;
-    color: #4b88a2;
-}
-
-.header p {
-    font-size: 18px;
-    color: #ff7a7a;
-}
 
 .booth-container {
     display: flex;
