@@ -108,10 +108,10 @@ h3 {
 .career-boxes .box
 {
     width: 100%;
-    background-color: #82cbc4;
+    background-color: #009494;
     padding: 0 0px;
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 9px;
     border-radius: 3px;
     box-sizing: border-box;
@@ -122,7 +122,7 @@ h3 {
 }
 .unique-jobs-boxes .box {
     width: 100%;
-    background-color: #3a4ca8;
+    background-color: #6555a4;
     padding: 0 0px;
     text-align: center;
     color: white;
@@ -136,11 +136,11 @@ h3 {
 }
 
 .special-exhibition {
-    background-color: #b8e5e0;
+    background-color: #afdddd;
     padding: 10px;
     text-align: center;
     font-size: 18px;
-    color: #1d549f;
+    color: #1c4e96;
     text-shadow: 2px 3px 1px rgb(118, 124, 129);
     border-radius: 5px;
     box-shadow: 1px 4px 3px rgba(0, 0, 0, 0.5);
@@ -189,22 +189,23 @@ button {
     box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.3);
 }
 .booth-number {
+    font-family: "Do Hyeon", sans-serif;
     position: absolute; 
-    top: 1px; 
+    top: 5px; 
     left: 0;
     right: 0;
     display: block;
-    font-size: 19px;  
+    font-size: 25px;  
     font-weight: bold;
 }
 
 .booth-name {
     position: absolute; 
-    top: 32px; 
+    top: 35px; 
     left: 0;
     right: 0;
     display: block; 
-    font-size: 12px; 
+    font-size: 13px; 
     font-weight: bold;
 }
 .star {
@@ -218,18 +219,19 @@ button {
     color: red;
 }
 .career-booth-number {
+    font-family: "Do Hyeon", sans-serif;
     position: absolute; 
-    top: 1px; 
+    top: 5px; 
     left: 0;
     right: 0;
     display: block;
-    font-size: 18px;  
+    font-size: 23px;  
     font-weight: bold;
 }
 
 .career-booth-name {
     position: absolute; 
-    top: 28px; 
+    top: 33px; 
     left: 0;
     right: 0;
     display: block; 
@@ -241,27 +243,27 @@ button {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .ggi{
-    background-color: #fed1f5;
+    background-color: #f5bdd6;
     color: rgb(0, 0, 0);
 }
 .woori{
-    background-color: #ddecca;
+    background-color: #bce2cc;
     color: rgb(0, 0, 0);
 
 }
 .event{
-    background-color: #feebb6;
+    background-color: #fde08f;
     color: rgb(0, 0, 0);
 
 }
 .choice{
-    background-color: #b8e9ff;
+    background-color: #bae3f8;
     color: rgb(0, 0, 0);
 
 }
 .future{
-    background-color: #0e6ca5;
-    color: white;
+    background-color: #babbdd;
+    color: rgb(0, 0, 0);
 }
 .green {
     background-color: lightgreen;
@@ -293,7 +295,7 @@ button {
 }
 
 .photozone {
-    background-color: #1d549f;
+    background-color: #1a5193;
     color: white;
     font-size: 25px;
     font-family: "Do Hyeon", sans-serif;
