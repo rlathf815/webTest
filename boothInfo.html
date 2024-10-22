@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <title>Booth Information</title>
     <style>
-
+        @font-face {
+            font-family: 'ChosunGu';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -21,11 +26,6 @@
             margin-top: 50px;
         }
 
-        .booth-title {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
         .booth-image {
             width: 550px;
             height: 800px;
@@ -36,28 +36,24 @@
             justify-content: center;
             align-items: center;
         }
-
-        .booth-details {
-            max-width: 600px;
-            text-align: center;
-        }
-
-
-        .reserve-button {
-            margin-top: 70px;
-            padding: 10px 20px;
-            font-size: 16px;
+        .home-button {
+            font-family: 'ChosunGu', sans-serif;
+            font-size: 15px;
+            background-color: #f55e4b;
+            margin-top: 50px;
             color: white;
-            background-color: #007BFF;
             border: none;
+            padding: 10px;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        .home-button.touch-active {
+            filter: brightness(0.8);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .reserve-button:hover {
-            background-color: #0056b3;
-        }
 
     </style>
     <script>
@@ -71,7 +67,7 @@
     <div class="booth-container">
         <div id="booth-title" class="booth-title"></div>
         <div id="booth-image" class="booth-image"></div>
-       
+        <button class="home-button" onclick="location.href='index.html'">홈으로 이동</button>
         
     </div>
 
@@ -170,11 +166,8 @@
             document.body.classList.add("reveal");
         }, 100); 
     });
-     // 예약 버튼 클릭 시 예약 페이지로 이동
-     document.getElementById('reserve-button').addEventListener('click', () => {
-            window.location.href = `reserve.html?booth=${boothNumber}`;
-        });
 
 </script>
+<script src="touch-events.js"></script>
 </body>
 </html>
