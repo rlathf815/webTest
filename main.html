@@ -16,38 +16,7 @@
             <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Orbit&display=swap" rel="stylesheet">
             <link href="https://font.elice.io/css?family=Elice+Digital+Baeum" rel="stylesheet">
         <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                document.body.style.opacity = "1"; // 페이지 로드 시 opacity를 1로 변경
-    
-                const guestLogin = localStorage.getItem('guestLogin');
-                const userInfoElement = document.getElementById('user-info');
-                console.log("guestLogin:", guestLogin);
-                console.log("user-info found: ", userInfoElement);
-    
-                if (userInfoElement) {
-                    if (guestLogin === 'true') {
-                        userInfoElement.textContent = "게스트로 로그인했습니다.";
-                    } else {
-                        const studentType = localStorage.getItem('studentType');
-                        const school = localStorage.getItem('school');
-                        const studentId = localStorage.getItem('studentId');
-                        const name = localStorage.getItem('name');
-    
-                        console.log("studentType:", studentType);
-                        console.log("school:", school);
-                        console.log("studentId:", studentId);
-                        console.log("name:", name);
-    
-                        if (school && studentId && name && guestLogin === 'false') {
-                            userInfoElement.textContent = `${school} ${studentId} ${name}`;
-                        } else {
-                            userInfoElement.textContent = "로그인 정보가 없습니다.";
-                        }
-                    }
-                } else {
-                    console.error("'user-info' 요소를 찾을 수 없습니다.");
-                }
-            });
+            
             function adjustViewport() {
             const metaViewport = document.querySelector("meta[name=viewport]");
             if (window.innerWidth > window.innerHeight) {
