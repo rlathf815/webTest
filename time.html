@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>부스운영시간</title>
+    <style>
+        .booth-image {
+                    width: 550px;
+                    height: 800px;
+                    margin: 0px 0;
+
+                    background-color: #ffffff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            </style>
+    <script>
+        window.onload = function() {
+            document.body.style.opacity = "1";
+        };
+    </script>
+</head>
+<body>
+
+    <div class="booth-container">
+        <div id="booth-title" class="booth-title"></div>
+        <div id="booth-image" class="booth-image"><img src="images/time.png" style="max-width: 100%; height: auto;"></div>
+
+       
+        
+    </div>
+    <script>
+       
+    document.addEventListener("DOMContentLoaded", () => {
+        const loader = document.getElementById("loader");
+        console.log("DOMContentLoaded event fired, starting loader animation.");
+        setTimeout(() => {
+            document.body.classList.add("reveal");
+        }, 100); 
+    });
+     // 예약 버튼 클릭 시 예약 페이지로 이동
+     document.getElementById('reserve-button').addEventListener('click', () => {
+            window.location.href = `reserve.html?booth=${boothNumber}`;
+        });
+
+</script>
+</body>
+</html>
