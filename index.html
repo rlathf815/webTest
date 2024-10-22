@@ -9,7 +9,8 @@
             href="https://fonts.gstatic.com"
             crossorigin="crossorigin">
             <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Orbit&display=swap" rel="stylesheet">
-    <title>2024 의왕시 청소년 진로박람회</title>
+            <link href="https://font.elice.io/css?family=Elice+Digital+Baeum" rel="stylesheet">
+            <title>2024 의왕시 청소년 진로박람회</title>
     <style>
         * {
             margin: 0;
@@ -18,7 +19,7 @@
         }
 
         body {
-            font-family: "Do Hyeon", sans-serif;            
+            font-family: "Elice Digital Baeum", sans-serif;            
             display: flex;
             justify-content: center;
             align-items: center;
@@ -30,14 +31,14 @@
         .container {
             text-align: center;
             width: 100%;
-            max-width: 380px;
+            max-width:460px;
             background-image: url('/images/main_background.png'); 
             background-size: cover; /* 이미지가 컨테이너 크기에 맞게 채워지도록 설정 */
             background-position: center; /* 이미지가 가운데 정렬되도록 설정 */
             padding: 30px 20px;
             border-radius: 15px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            height: 600px;
+            box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.3);
+            height: 620px;
             display: flex;
             flex-direction: column;
             justify-content: center; /* 버튼들을 가운데 정렬 */
@@ -49,30 +50,50 @@
         .button-container {
             display: flex;
             flex-direction: column; /* 버튼을 세로로 배치 */
-
             margin-top: auto;
             gap: 15px; /* 버튼 사이의 간격 설정 */
         }
 
         .action-button {
-            font-family: "Do Hyeon", sans-serif;
+            font-family: "Elice Digital Baeum", sans-serif;;
             background-color: #5a368f; /* 부드러운 초록색 버튼 */
             color: white;
+            align-self: center;
             padding: 15px;
             font-size: 30px; 
             border: none;
-            border-radius: 10px; /* 버튼의 모서리 둥글게 */
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease; /* 부드러운 효과 */
-            width: 100%; /* 버튼이 부모 컨테이너의 너비를 차지 */
-            box-shadow: 5px 4px 3px rgba(0, 0, 0, 0.3);
+            border-radius: 50px; 
+            height:  60px;
+            position: center;
+            width: 80%; 
+            box-shadow: -3px -3px 3px rgba(0, 0, 0, 0.5);
+            border: 3px solid white; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            position: relative; /* 각 버튼을 기준으로 ::before가 적용되게 함 */
         }
 
         .action-button.touch-active {
             filter: brightness(0.8);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+        .action-button::before {
+            content: '';
+            position: absolute;
+            top: 50%; /* 버튼의 수직 중앙 */
+            left: 0;
+            right: 0;
+            height: 1px; /* 선의 두께 */
+            background-color: white; /* 흰색 선 */
+            transform: translateY(-50%); /* 중앙 정렬 */
+        }
 
+        .action-button span {
+            background-color: #5a368f; /* 텍스트 배경 보라색 */
+            padding: 0 10px; /* 텍스트 주위 여백 */
+            z-index: 1; /* 텍스트를 흰색 선 위에 표시 */
+        }
         /* 화면이 더 큰 경우 */
         @media (min-width: 768px) {
             .action-button {
@@ -89,9 +110,15 @@
         <!-- 버튼들 -->
         <div class="button-container">
             
-            <button class="action-button" onclick="location.href='main.html'">모바일 리플렛</button>
-            <button class="action-button" onclick="location.href='main.html'">부스운영시간</button>
-            <button class="action-button" onclick="location.href='https://naver.me/57Ve2Hsi'">만족도 조사</button>
+            <button class="action-button">
+                <span>모바일 리플렛</span>
+            </button>
+            <button class="action-button">
+                <span>부스운영시간</span>
+            </button>
+            <button class="action-button">
+                <span>만족도 조사</span>
+            </button>
         </div>
     </div>
 </body>
