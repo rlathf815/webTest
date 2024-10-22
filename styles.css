@@ -52,11 +52,35 @@ body {
 }
 .header {
     font-family: "Orbit", sans-serif;
+    position: relative;
     font-weight: bold;
     font-size: 15px;
     padding-left: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+.home {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #5a368f;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.home img {
+    width: 16px;  /* 아이콘 크기 설정 */
+    height: 16px;
 }
 
+.home.touch-active {
+    filter: brightness(0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
 .booth-container {
     display: flex;
