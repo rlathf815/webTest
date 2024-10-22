@@ -36,11 +36,17 @@
             justify-content: center;
             align-items: center;
         }
-        .home-button {
-            font-family: 'ChosunGu', sans-serif;
-            font-size: 15px;
-            background-color: #f55e4b;
+        .button-container {
+            display: flex;
+            gap: 20px; /* 버튼 사이 간격 */
             margin-top: 50px;
+        }
+
+        .home-button, .map-button {
+            font-family: 'ChosunGu', sans-serif;
+            font-size: 20px;
+            background-color: #f55e4b;
+            
             color: white;
             border: none;
             padding: 10px;
@@ -49,7 +55,7 @@
             display: flex;
             align-items: center;
         }
-        .home-button.touch-active {
+        .home-button.touch-active ,.map-button.touch-active{
             filter: brightness(0.8);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
@@ -67,7 +73,10 @@
     <div class="booth-container">
         <div id="booth-title" class="booth-title"></div>
         <div id="booth-image" class="booth-image"></div>
+        <div class="button-container">
+        <button class="map-button" onclick="location.href='main.html'">전자맵으로 이동</button>
         <button class="home-button" onclick="location.href='index.html'">홈으로 이동</button>
+    </div>
         
     </div>
 

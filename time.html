@@ -5,9 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <title>부스운영시간</title>
     <style>
+        @font-face {
+            font-family: 'ChosunGu';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
         body {
             opacity: 0;
             transition: opacity 0.5s ease-in-out; 
+        }
+        .booth-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center; 
+            
         }
         .booth-image {
             width: 100%; 
@@ -16,7 +29,26 @@
             justify-content: center; 
             align-items: center; 
             background-color: #ffffff; 
-}
+            
+        }
+        
+        .home-button {
+            font-family: 'ChosunGu', sans-serif;
+            font-size: 20px;
+            background-color: #5a368f;
+            margin-top: 10px;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .home-button.touch-active{
+            filter: brightness(0.8);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
             </style>
     <script>
         window.onload = function() {
@@ -29,7 +61,7 @@
     <div class="booth-container">
         <div id="booth-title" class="booth-title"></div>
         <div id="booth-image" class="booth-image"><img src="images/time.png" style="max-width: 100%; height: auto;"></div>
-
+        <button class="home-button" onclick="location.href='index.html'">홈으로 이동</button>
        
         
     </div>
