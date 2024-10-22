@@ -14,12 +14,16 @@
         body {
             opacity: 0;
             transition: opacity 0.5s ease-in-out; 
+            justify-content: center; 
+            align-items: center; /* 수직 가운데 정렬 */
+            min-height: 100vh; /* 화면 높이에 맞게 조정 */
+            margin: 0; /* 기본 여백 제거 */
         }
         .booth-container {
             display: flex;
             flex-direction: column;
             align-items: center; 
-            justify-content: center; 
+            justify-content: center;
             
         }
         .booth-image {
