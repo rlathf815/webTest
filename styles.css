@@ -84,7 +84,7 @@ body {
 }
 
 .home.touch-active {
-    filter: brightness(0.8);
+    filter: brightness(0.7);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
