@@ -23,34 +23,40 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh; /* 화면 전체 높이 */
-            background-color: #f0f0f0; /* 부드러운 배경색 */
+            background-color: #fcecec; /* 부드러운 배경색 */
             padding: 20px;
         }
 
         .container {
             text-align: center;
             width: 100%;
-            max-width: 380px; /* 모바일에서 적당한 최대 너비 */
-            background-color: white; /* 배경 흰색으로 설정 */
-            padding: 30px 20px; /* 내부 여백 추가 */
-            border-radius: 15px; /* 모서리를 둥글게 */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+            max-width: 380px;
+            background-image: url('/images/main_background.png'); 
+            background-size: cover; /* 이미지가 컨테이너 크기에 맞게 채워지도록 설정 */
+            background-position: center; /* 이미지가 가운데 정렬되도록 설정 */
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* 버튼들을 가운데 정렬 */
+            gap: 15px; /* 버튼 사이의 간격 */
+            
         }
 
-        .logo {
-            width: 350px; /* 모바일 화면에 맞춰 로고 크기 설정 */
-            margin-bottom: 30px; /* 로고와 버튼 사이 여백 */
-        }
 
         .button-container {
             display: flex;
             flex-direction: column; /* 버튼을 세로로 배치 */
+
+            margin-top: auto;
             gap: 15px; /* 버튼 사이의 간격 설정 */
         }
 
         .action-button {
             font-family: "Do Hyeon", sans-serif;
-            background-color: #4CAF50; /* 부드러운 초록색 버튼 */
+            background-color: #5a368f; /* 부드러운 초록색 버튼 */
             color: white;
             padding: 15px;
             font-size: 30px; 
@@ -59,17 +65,12 @@
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.2s ease; /* 부드러운 효과 */
             width: 100%; /* 버튼이 부모 컨테이너의 너비를 차지 */
-            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1); /* 버튼에 그림자 효과 */
+            box-shadow: 5px 4px 3px rgba(0, 0, 0, 0.3);
         }
 
-        .action-button:hover {
-            background-color: #45a049; /* 호버 시 색상 조금 어둡게 */
-            transform: translateY(-2px); /* 버튼을 살짝 올리는 효과 */
-        }
-
-        .action-button:active {
-            transform: translateY(0); /* 클릭 시 원래 위치로 돌아오게 */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 클릭 시 그림자 효과 변경 */
+        .action-button.touch-active {
+            filter: brightness(0.8);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         /* 화면이 더 큰 경우 */
@@ -80,16 +81,16 @@
             }
         }
     </style>
-</head>.
+</head>
 <body>
     <div class="container">
-        <!-- 로고 이미지 -->
-        <img src="images/로고.png" alt="로고 이미지" class="logo">
+        
 
         <!-- 버튼들 -->
         <div class="button-container">
             
             <button class="action-button" onclick="location.href='main.html'">모바일 리플렛</button>
+            <button class="action-button" onclick="location.href='main.html'">부스운영시간</button>
             <button class="action-button" onclick="location.href='https://naver.me/57Ve2Hsi'">만족도 조사</button>
         </div>
     </div>

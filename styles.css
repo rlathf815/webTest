@@ -62,7 +62,7 @@ body {
 .home {
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 20px;
     background-color: #5a368f;
     color: white;
     border: none;
@@ -73,15 +73,33 @@ body {
     align-items: center;
 }
 .home img {
-    width: 16px;  /* 아이콘 크기 설정 */
-    height: 16px;
+    width: 25px;  /* 아이콘 크기 설정 */
+    height: 25px;
 }
 
 .home.touch-active {
     filter: brightness(0.8);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
+.time {
+    position: absolute;
+    top: 10px;
+    right: 80px;
+    font-family: "Orbit", sans-serif;
+    font-size: 15px;
+    background-color: #5a368f;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.time.touch-active {
+    filter: brightness(0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 .booth-container {
     display: flex;
     margin: 10px;
