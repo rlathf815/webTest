@@ -20,6 +20,9 @@
         content: "width=device-width, initial-scale=0.05, maximum-scale=5.0, user-scalable=yes";
     }
 }
+html {
+    font-synthesis: none;
+  }
 @font-face {
     font-family: 'ChosunGu';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
@@ -55,6 +58,8 @@ body {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
     -webkit-text-size-adjust: 100%;
+    font-synthesis: none;
+    
 }
 .header {
     font-family: "Orbit", sans-serif;
